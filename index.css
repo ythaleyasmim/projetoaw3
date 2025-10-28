@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3e1b8 url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  font-family: 'Cinzel Decorative', serif;
+  color: #3b2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.envelope {
+  background: linear-gradient(to bottom right, #e9d7a7, #d8c28d);
+  border: 10px solid #b68b4c;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4), inset 0 0 60px rgba(87, 53, 19, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+  width: 85vw;
+  height: 85vh;
+  position: relative;
+}
+
+
+.pergaminho {
+  border: 2px dashed #8b5a2b;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(240, 224, 182, 0.9);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.titulo {
+  text-align: center;
+  font-size: 2.2em;
+  margin-top: 15px;
+  color: #3a2c1a;
+  text-shadow: 2px 2px 4px #c1a567;
+  letter-spacing: 2px;
+}
+
+
+.back {
+  background: linear-gradient(to bottom, #8b4513, #5a2e0c);
+  border: 2px solid #d2b48c;
+  color: #f9f3e1;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.back:hover {
+  background: #b8860b;
+  color: #2e1b07;
+  transform: scale(1.05);
+}
+
+
+.mapa-container {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;  
+  height: auto;
+  border: 5px solid #c6a664;
+  border-radius: 12px;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #00000020;
+  position: relative;
+}
+
+
+.mapa-fundo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  filter: sepia(0.7) contrast(1.05) brightness(0.9);
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+.casinha {
+  position: absolute;
+  width: 8%;
+  height: 11%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.2));
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 1;
+}
+
+
+.casinha::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(71, 43, 21, 0.95);
+  color: #f5e3b3;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border: 1px solid #c6a664;
+  text-shadow: 1px 1px 2px #000;
+  pointer-events: none;
+  z-index: 5;
+}
+
+
+.casinha:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9));
+  z-index: 6;
+}
+.casinha:hover::after {
+  opacity: 1;
+}
+
+
+#casa1 { top: 86%; left: 55%; }
+#casa2 { top: 58%; left: 49%; }
+#casa3 { top: 42%; left: 70%; }
+#casa4 { top: 14%; left: 70%; }
+#casa5 { top: 30%; left: 38%; }
+#casa6 { top: 14%; left: 20%; }
